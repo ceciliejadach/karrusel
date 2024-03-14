@@ -1,12 +1,13 @@
 ---
 import "../styles/generel.css";
+import Button from "../components/Button.astro";
 ---
 
 <div class="container">
   <nav class="mobile-nav">
-    <a href="../pages/programliste.astro">Programliste</a>
-    <a href="../pages/events.astro">Events</a>
-    <a href="../pages/about.astro">About us</a>
+    <Button variant="primary">Programliste</Button>
+    <Button variant="primary">Events</Button>
+    <Button variant="primary">About us</Button>
   </nav>
   <button class="hamburger">
     <span class="bar"></span>
@@ -92,20 +93,5 @@ hvilket skaber et kryds-ikon  */
   /* mobile-nav bliver hevet ind når man burgermenuen er aktiv  */
   .mobile-nav.is-active {
     left: 50%;
-  }
-
-  /* Stil af mobil navigation links */
-  .mobile-nav a {
-    display: block;
-    width: 100%;
-    margin: 0 auto 16px;
-    padding: 10px 10px;
-    color: black;
-    text-decoration: none;
-    border-radius: 25px;
-  }
-
-  .mobile-nav a:hover {
-    text-decoration: underline;
   }
 </style>
