@@ -1,9 +1,24 @@
 ---
-const {navn,email,tlf} = Astro.props;
+import "../styles/generel.css";
+const { variant, navn, email, tlf } = Astro.props;
 ---
 
-<article>
-    <h2>{navn}</h2>
-    <p>{email}</p>
-    <p>{tlf}</p>
+<article class={variant + " "}>
+  <h2>{navn}</h2>
+  <p>{email}</p>
+  <p>{tlf}</p>
 </article>
+
+<style>
+  article {
+    max-width: 200px;
+  }
+  .card1 {
+    background-color: var(---pink-100);
+  }
+
+  .card2 {
+    background-color: var(---green-100);
+    color: var(---text-color);
+  }
+</style>
