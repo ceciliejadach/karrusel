@@ -26,15 +26,12 @@ video {
 
   /* Skriftstørrelser */
   --font-size-h1-mobile: 2.14rem;
-  --font-size-h1-tablet: 2.14rem;
   --font-size-h1-desktop: 2.25rem;
 
   --font-size-h2-mobile: 1.5rem;
-  --font-size-h2-tablet: 1.5rem;
   --font-size-h2-desktop: 1.56rem;
 
   --font-size-h3-mobile: 1.29rem;
-  --font-size-h3-tablet: 1.29rem;
   --font-size-h3-desktop: 1.25rem;
 
   --font-size-p: 1rem;
