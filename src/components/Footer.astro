@@ -1,3 +1,22 @@
 ---
 import "../styles/generel.css";
+import Newsletter from "./Newsletter.astro";
+import SoMeIcons from "./SoMeIcons.astro";
 ---
+
+<section class="footer">
+  <Newsletter />
+  <SoMeIcons />
+</section>
+
+<style>
+  @media (min-width: 800px) {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: top;
+      padding: 20px 60px 20px 40px;
+      border-top: solid var(---text-color) 3px;
+    }
+  }
+</style>

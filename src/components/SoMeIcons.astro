@@ -1,0 +1,51 @@
+---
+import "../styles/generel.css";
+---
+
+<section>
+  <div class="karrusel_info">
+    <h1>Karrusel Fesitval</h1>
+    <p>Karrusel, Copenhagen, Refshaleøen</p>
+    <p>22–24 August 2024</p>
+    <p>Address: Refshalevej 193, 1432 Copenhagen.</p>
+  </div>
+  <div class="karrusel_some">
+    <h1>Social</h1>
+    <a href="https://www.instagram.com/rawnordicdesign/">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/search/top?q=raw%20nordic%20design">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
+</section>
+
+<style>
+  .karrusel_info,
+  .karrusel_some {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+
+  .karrusel_info p,
+  .karrusel_info h1,
+  .karrusel_some h1 {
+    margin-bottom: 5px;
+  }
+
+  .fa-brands {
+    color: var(---text-color);
+    padding-right: 20px;
+    font-size: var(--font-size-h2-mobile);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (min-width: 800px) {
+    .karrusel_info {
+      margin-top: 0;
+    }
+  }
+</style>

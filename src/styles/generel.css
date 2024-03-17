@@ -35,6 +35,8 @@ video {
   --font-size-h3-desktop: 1.25rem;
 
   --font-size-p: 1rem;
+
+  --font-size-p-small: 0.8rem;
 }
 
 body {
