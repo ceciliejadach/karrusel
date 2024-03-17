@@ -1,27 +1,26 @@
 ---
 import "../styles/generel.css";
 import Card from "../components/Card.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
-
-const artist = await fetch(
-"https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival",{
-    method: "GET",
-    headers: {
-        apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvdXp0a3lwdXZhZGl4c3p6dm1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDk2NDgsImV4cCI6MjAyNTk4NTY0OH0.oMKp-E0V7IIEqcgHIkiLPHgJ0ErGic-JPce1db7I5js",
-    },  
-}         
-).then((response)=> {
-    return response.json();
+const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvdXp0a3lwdXZhZGl4c3p6dm1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDk2NDgsImV4cCI6MjAyNTk4NTY0OH0.oMKp-E0V7IIEqcgHIkiLPHgJ0ErGic-JPce1db7I5js",
+  },
+}).then((response) => {
+  return response.json();
 });
 
-console.log ("artist", artist);
-
+console.log("artist", artist);
 ---
-<section class="artist">
-    {
-        artist.map((artist) =>{
-            return <Card data={artist}/>;
-        })
-    }
 
-</section>
+<MainLayout title="Hjem">
+  <section class="artist">
+    {
+      artist.map((artist) => {
+        return <Card data={artist} />;
+      })
+    }
+  </section>
+</MainLayout>

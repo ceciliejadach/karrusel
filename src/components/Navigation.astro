@@ -1,0 +1,30 @@
+---
+import "../styles/generel.css";
+import Burger from "../components/Burger.astro";
+---
+
+<div class="nav-container">
+  <a href="/index"><img src="/public/img/karrosel-logo.png" alt="karrusel logo" /></a>
+  <p>22.- 24. august</p>
+  <Burger />
+</div>
+
+<!-- <a href="/programliste">Programliste</a>
+<a href="/singleview">Singleview</a>
+<a href="/events">Events</a>
+<a href="/about">About us</a> -->
+
+<style>
+  .nav-container img {
+    max-width: 70px;
+    filter: contrast(5%);
+  }
+
+  .nav-container {
+    padding: 11px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 5px 0 5px;
+  }
+</style>

@@ -1,19 +1,30 @@
 ---
 import "../styles/generel.css";
-const {data} = Astro.props;
+const { data } = Astro.props;
 ---
 
-<article>
-<img src={"../portraet/" + data.img}  alt={"Image of" + data.name}>
-<h3>{data.name + " "+ data.land}</h3>
-<p>{data.genre}</p>
+<a href=`/singleview/${data.name}`>
+  <article>
+    <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
+    <h3>{data.name + " " + data.land}</h3>
+    <p>{data.genre}</p>
 
-</article>
+    {
+      data.artist && (
+        <ul>
+          {data.artist.map((item) => {
+            return <li> {item}</li>;
+          })}
+        </ul>
+      )
+    }
+  </article>
+</a>
 
 <style>
   article {
     max-width: 200px;
-    color: white
+    color: white;
   }
   .card1 {
     background-color: var(---pink-100);
