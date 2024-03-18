@@ -3,7 +3,7 @@ import "../styles/generel.css";
 const { data } = Astro.props;
 ---
 
-<a href=`singleview/${data.id}`>
+<a href=`singleview/${data.slug}`>
   <article>
     <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
     <h3>{data.name + " " + data.land}</h3>
@@ -23,15 +23,33 @@ const { data } = Astro.props;
 
 <style>
   article {
-    max-width: 200px;
+    width: 300px;
     color: white;
-  }
-  .card1 {
-    background-color: var(---pink-100);
+    margin-left: 2rem;
+    animation: move_rtl 6s linear infinite;
+    white-space: nowrap;
+    background-color: var(---blue-60);
+    height: 250px;
   }
 
-  .card2 {
-    background-color: var(---green-100);
-    color: var(---text-color);
+  h3 {
+    padding-left: 5px;
+    font-size: var(--font-size-h3-mobile);
+  }
+  p {
+    padding-left: 5px;
+    font-size: var(--font-size-p);
+  }
+  @keyframes move_rtl {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  a {
+    text-decoration: none;
   }
 </style>
