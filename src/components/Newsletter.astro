@@ -15,7 +15,11 @@ import "../styles/generel.css";
 <style>
   form h2 {
     margin-bottom: 15px;
-    margin-top: 30px;
+    text-align: center;
+  }
+
+  form p {
+    text-align: center;
   }
   .small {
     font-size: var(--font-size-p-small);
@@ -23,15 +27,14 @@ import "../styles/generel.css";
 
   form {
     max-width: 300px;
-    padding-left: 20px;
-    margin-bottom: 60px;
+    margin: 20px auto 60px;
   }
   input[type="text"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 15px 0 10px;
+    margin: 25px 0 15px;
   }
   input[type="submit"] {
     padding: 0.7rem 1.5rem;
@@ -42,7 +45,7 @@ import "../styles/generel.css";
     display: block;
     background-color: transparent;
     color: var(---text-color);
-    margin: 0px auto 15px;
+    margin: 10px auto 25px;
   }
 
   input[type="submit"]:hover {
@@ -53,8 +56,8 @@ import "../styles/generel.css";
   }
 
   @media (min-width: 800px) {
-    form h2 {
-      margin-top: 0;
+    form {
+      margin: 0;
     }
   }
 </style>

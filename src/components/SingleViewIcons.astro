@@ -1,0 +1,22 @@
+---
+import "../styles/generel.css";
+---
+
+<div class="some_links">
+  <a href="#"><img src="/public/img/soundcloud.png" alt="soundcloud logo" /> </a>
+  <a href="#"><img src="/public/img/instagram.png" alt="instagram logo" /> </a>
+  <a href="#"><img src="/public/img/facebook.png" alt="facebook logo" /> </a>
+</div>
+
+<style>
+  .some_links {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin: 30px auto 50px;
+  }
+
+  .some_links :nth-child(1) {
+    max-width: 30px;
+  }
+</style>

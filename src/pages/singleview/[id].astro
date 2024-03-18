@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import "../../styles/generel.css";
+import SingleViewIcons from "../../components/SingleViewIcons.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
@@ -12,14 +13,13 @@ export async function getStaticPaths() {
 
   return data.map((artist) => {
     return {
-      params: { id: artist.id },
+      params: { id: artist.slug },
       props: { myData: artist },
     };
   });
 }
 
 const { myData } = Astro.props;
-console.log(myData);
 ---
 
 <MainLayout>
@@ -29,14 +29,10 @@ console.log(myData);
     <div class="artist_container">
       <h1>{myData.name}</h1>
       <h3>Dato: {myData.dato}</h3>
-      <h3>Scene: {myData.scene}</h3>
+      <h3>Scene: {myData.Scene}</h3>
       <p>{myData.description}</p>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3LHqODf1hGAgZ5LTw1Gf4C?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <div class="some_links">
-        <a href="#"><img src="/public/img/soundcloud.png" alt="soundcloud logo" /> </a>
-        <a href="#"><img src="/public/img/instagram.png" alt="instagram logo" /> </a>
-        <a href="#"><img src="/public/img/facebook.png" alt="facebook logo" /> </a>
-      </div>
+      <SingleViewIcons />
     </div>
   </div>
 </MainLayout>
@@ -67,23 +63,20 @@ console.log(myData);
 
   .artist_container h3 {
     color: rgb(203, 202, 202);
+    font-size: var(--font-size-h3-mobile);
   }
 
   .artist_container :nth-child(4) {
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   iframe {
     margin-top: 30px;
   }
-  .some_links {
-    display: flex;
-    width: 200px;
-    justify-content: space-between;
-    margin: 30px auto 50px;
-  }
 
-  .some_links :nth-child(1) {
-    max-width: 30px;
+  p {
+    font-size: var(--font-size-p);
+    font-weight: 300;
   }
 
   @media (min-width: 800px) {

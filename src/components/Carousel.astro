@@ -15,45 +15,11 @@ console.log("artist", artist);
 ---
 
 <section class="artist carousel">
-  <div class="carousel-slide">
-    {
-      artist.map((artist) => {
-        return <Card data={artist} />;
-      })
-    }
-  </div>
+  {
+    artist.map((artist) => {
+      return <Card id="carousel" data={artist} />;
+    })
+  }
 </section>
 
-<style>
-  /* Stil til at skjule alle slides undtagen det første */
-  .carousel-slide {
-    display: none;
-  }
-
-  /* Vis det første slide */
-  .carousel-slide:first-child {
-    display: block;
-  }
-
-  /* Animationsstil til at glide til næste slide */
-  @keyframes slide {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* Animering af slides */
-  .carousel-slide {
-    animation: slide 1s ease;
-  }
-
-  /* Tilføj styling til billedkarusellen */
-  .carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-</style>
+<style></style>

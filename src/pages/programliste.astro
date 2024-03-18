@@ -2,6 +2,7 @@
 import "../styles/generel.css";
 import ProgramlistArtistBox from "../components/ProgramlistArtistBox.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import FilterBox from "../components/FilterBox.astro";
 
 const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
   method: "GET",
@@ -12,11 +13,12 @@ const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/Kar
   return response.json();
 });
 
-console.log("artist", artist);
+console.log("artist", artist.slug);
 ---
 
 <MainLayout>
   <h1>Line-up</h1>
+  <FilterBox />
   <section class="artist">
     {
       artist.map((artist) => {

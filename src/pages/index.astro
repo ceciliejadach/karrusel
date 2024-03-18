@@ -1,4 +1,4 @@
-<!-- ---
+---
 import "../styles/generel.css";
 import Card from "../components/Card.astro";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -15,7 +15,6 @@ const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/Kar
 console.log("artist", artist);
 ---
 
-<<<<<<< HEAD
 <MainLayout title="Hjem">
   <section class="artist">
     {
@@ -24,93 +23,14 @@ console.log("artist", artist);
       })
     }
   </section>
+
+  <iframe controls autoplay width="560" height="315" src="https://www.youtube.com/embed/w5XwDzNwiSk?si=ARVhgd0x5-ZI83Ez" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </MainLayout>
 
-<style></style>
-=======
-<div class="event">
-  <div class="event_header">
-    <p>22/08/2024</p>
-    <p>Karrusel Festival</p>
-  </div>
-
-  <div class="event_h1">
-    <h1>Ansigtsmaling</h1>
-  </div>
-
-  <div class="event_p"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
-
-  <div class="event_link">
-    <p>Arrangeret af <a href="https://www.nusnus.dk/">Nus Nus</a></p>
-  </div>
-</div>
-
 <style>
-  .event {
-    background: #ff4e50;
-    background: -webkit-linear-gradient(left, #023dff, #ff00a5);
-    background: linear-gradient(to right, #023dff, #ff00a5);
-
-    width: 400px;
-    height: 500px;
-    padding: 20px;
-  }
-
-  .event_header {
+  .artist {
     display: flex;
     justify-content: space-between;
-    color: white;
-  }
-
-  .event_h1 {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: white;
-  }
-
-  .event_p {
-    margin-bottom: 190px;
-    padding-left: 30px;
-    padding-right: 30px;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    color: white;
-  }
-
-  .event_link {
-    text-align: center;
-    margin-bottom: 0;
-    color: white;
-  }
-
-  a {
-    color: white;
+    overflow: hidden;
   }
 </style>
-
-<div class="ticketknap">
-  <button>Buy Tickets</button>
-</div>
-
-<style>
-  /*mobil*/
-  button {
-    border: 3px solid #00ff29;
-    border-radius: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: transparent;
-    cursor: pointer;
-    color: white;
-  }
-
-  /*computer*/
-
-  button {
-    width: 150px;
-  }
-</style> -->
->>>>>>> event
