@@ -1,0 +1,44 @@
+---
+import "../styles/generel.css";
+const { data } = Astro.props;
+---
+
+<a href=`singleview/${data.id}`>
+  <article>
+    <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
+    <div>
+      <h3>{data.name + " " + data.land}</h3>
+      <p>{data.genre}</p>
+    </div>
+
+    {
+      data.artist && (
+        <ul>
+          {data.artist.map((item) => {
+            return <li> {item}</li>;
+          })}
+        </ul>
+      )
+    }
+  </article>
+</a>
+
+<style>
+  article {
+    background-color: var(---blue-60);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 0 auto 30px;
+    text-decoration: none;
+    width: 350px;
+  }
+
+  article h3,
+  article p {
+    padding-left: 10px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
