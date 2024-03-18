@@ -1,10 +1,10 @@
 ---
-
+const { data } = Astro.props;
 ---
 
 <article>
-  <h2></h2>
-  <p>Dato</p>
-  <p>Scene</p>
-  <p>Beskrivelse</p>
+  <h2>{data.name}</h2>
+  <p>{data.dato}</p>
+  <p>{data.scene}</p>
+  <p>{data.description}</p>
 </article>

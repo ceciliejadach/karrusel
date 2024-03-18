@@ -1,0 +1,86 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import "../../styles/generel.css";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvdXp0a3lwdXZhZGl4c3p6dm1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDk2NDgsImV4cCI6MjAyNTk4NTY0OH0.oMKp-E0V7IIEqcgHIkiLPHgJ0ErGic-JPce1db7I5js",
+    },
+  }).then((response) => response.json());
+
+  return data.map((artist) => {
+    return {
+      params: { id: artist.id },
+      props: { myData: artist },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<MainLayout>
+  <!-- <h1>{myData.name}</h1> -->
+  <div class="artist_container">
+    <img src={"/portraet/" + myData.image} alt={"Image of " + myData.name} />
+    <h1>{myData.name}</h1>
+    <h3>Dato: {myData.dato}</h3>
+    <h3>Scene: {myData.scene}</h3>
+    <p>{myData.description}</p>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3LHqODf1hGAgZ5LTw1Gf4C?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  <div class="some_links">
+    <a href="#"><img src="/public/img/soundcloud.png" alt="soundcloud logo" /> </a>
+    <a href="#"><img src="/public/img/instagram.png" alt="instagram logo" /> </a>
+    <a href="#"><img src="/public/img/facebook.png" alt="facebook logo" /> </a>
+  </div>
+</MainLayout>
+
+<style>
+  /* h1 {
+    position: absolute;
+    font-family: rye;
+    top: 20%;
+    left: -11%;
+    color: var(---green-100);
+    transform: rotate(-90deg);
+    font-size: 3rem;
+  } */
+
+  .artist_container {
+    margin: 20px 0 20px 20px;
+  }
+
+  .artist_container img {
+    margin-bottom: 20px;
+  }
+
+  .artist_container h1 {
+    margin-bottom: 10px;
+  }
+
+  .artist_container h3 {
+    color: rgb(203, 202, 202);
+  }
+
+  .artist_container :nth-child(4) {
+    margin-bottom: 20px;
+  }
+  iframe {
+    margin-top: 30px;
+  }
+  .some_links {
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-between;
+    margin: 30px auto 50px;
+  }
+
+  .some_links :nth-child(1) {
+    max-width: 30px;
+  }
+</style>
