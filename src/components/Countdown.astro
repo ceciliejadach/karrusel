@@ -1,0 +1,53 @@
+---
+import "../styles/generel.css";
+---
+
+<section class="countdown_container">
+  <h1>Countdown til Karrusel Festival</h1>
+  <div id="countdown" class="countdown">
+    <ul>
+      <li><span id="days">00</span>dage</li>
+      <li><span id="hours">00</span>timer</li>
+      <li class="separator">:</li>
+      <li><span id="minutes">00</span>minutter</li>
+      <li class="separator">:</li>
+      <li><span id="seconds">00</span>sekunder</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .countdown_container h1 {
+    margin: 4rem 0 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    border: solid 1px var(---text-color);
+    padding: 2rem 0;
+  }
+
+  ul li {
+    list-style-type: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  li span {
+    display: block;
+  }
+
+  li.separator {
+    margin: 0 10px;
+    line-height: 1;
+    color: var(---text-color);
+  }
+
+  /* li:first-of-type {
+    margin-right: 5rem;
+  } */
+</style>
