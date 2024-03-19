@@ -4,50 +4,50 @@ import "../styles/generel.css";
 
 <section class="countdown_container">
   <h1>Countdown til Karrusel Festival</h1>
-  <div id="countdown" class="countdown">
-    <ul>
-      <li><span id="days">00</span>dage</li>
-      <li><span id="hours">00</span>timer</li>
-      <li class="separator">:</li>
-      <li><span id="minutes">00</span>minutter</li>
-      <li class="separator">:</li>
-      <li><span id="seconds">00</span>sekunder</li>
-    </ul>
+  <div class="countdown">
+    <div>
+      <p id="days">00</p>
+      <span>Dage</span>
+    </div>
+    <div>
+      <p id="hours">00</p>
+      <span>Timer</span>
+    </div>
+    <div>
+      <p id="minutes">00</p>
+      <span>Minutter</span>
+    </div>
+    <div>
+      <p id="seconds">00</p>
+      <span>Sekunder</span>
+    </div>
   </div>
 </section>
 
 <style>
-  .countdown_container h1 {
-    margin: 4rem 0 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-
-  ul {
+  .countdown {
     display: flex;
-    justify-content: center;
-    border: solid 1px var(---text-color);
-    padding: 2rem 0;
   }
 
-  ul li {
-    list-style-type: none;
-    text-transform: uppercase;
-    text-align: center;
+  .countdown div {
+    flex-basis: 100px;
   }
-
-  li span {
-    display: block;
-  }
-
-  li.separator {
-    margin: 0 10px;
-    line-height: 1;
-    color: var(---text-color);
-  }
-
-  /* li:first-of-type {
-    margin-right: 5rem;
-  } */
 </style>
+
+<script>
+  var countDownDate = new Date("22. august, 2025 00:00:00").getTime();
+  var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+  }, 1000);
+</script>

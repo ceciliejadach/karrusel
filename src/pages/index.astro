@@ -2,6 +2,7 @@
 import "../styles/generel.css";
 import Card from "../components/Card.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import Countdown from "../components/Countdown.astro";
 
 const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/KarruselFestival", {
   method: "GET",
@@ -23,6 +24,7 @@ console.log("artist", artist);
       })
     }
   </section>
+  <Countdown />
   <iframe controls autoplay width="560" height="315" src="https://www.youtube.com/embed/w5XwDzNwiSk?si=ARVhgd0x5-ZI83Ez" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </MainLayout>
 
