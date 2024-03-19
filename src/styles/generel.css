@@ -41,9 +41,10 @@ video {
 
 body {
   background-color: var(---background-color);
-  background-image: url();
+  background-image: url(/public/img/background_img.webp);
   font-family: inter;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1,
@@ -51,4 +52,8 @@ h2,
 h3,
 p {
   color: var(---text-color);
+}
+
+p {
+  line-height: 1.4rem;
 }
