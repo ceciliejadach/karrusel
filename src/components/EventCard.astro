@@ -1,0 +1,86 @@
+---
+import "../styles/generel.css";
+const { variant } = Astro.props;
+const { date, title, headline, description, arrange } = Astro.props;
+---
+
+<div id="event_card" class={variant + " "}>
+  <div class="event_header">
+    <p>{date}</p>
+    <p>{title}</p>
+  </div>
+  <h1>{headline}</h1>
+  <p>{description}</p>
+  <p>{arrange}</p>
+</div>
+
+<style>
+  #event_card {
+    display: grid;
+    width: 360px;
+    height: 500px;
+    padding: 20px;
+    margin: 0 auto 20px;
+  }
+
+  .event_header {
+    display: flex;
+    justify-content: space-between;
+    color: var(---text-color);
+  }
+
+  .event_header p {
+    font-weight: 200;
+  }
+
+  #event_card h1 {
+    padding-left: 30px;
+    color: var(---text-color);
+    font-family: rye;
+  }
+
+  #event_card p {
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    color: white;
+  }
+
+  #event_card :last-child {
+    margin-top: auto;
+    text-align: center;
+  }
+
+  #event_card :first-child {
+    margin-bottom: auto;
+  }
+
+  .variant_1 {
+    background: linear-gradient(to right, #023dff, #ff00a5);
+  }
+
+  .variant_2 {
+    background: linear-gradient(to right, #17ff02, #ddff00);
+  }
+
+  .variant_3 {
+    background: linear-gradient(to right, #ddff00, #023dff);
+  }
+
+  .variant_3 {
+    background: linear-gradient(to right, #ff9100, #ff00a5);
+  }
+
+  .variant_4 {
+    background: linear-gradient(to right, #023dff, #ff9100);
+  }
+
+  .variant_5 {
+    background: linear-gradient(to right, #2bff00, #ff00a5);
+  }
+
+  .variant_6 {
+    background: linear-gradient(to right, #023dff, #ddff00);
+  }
+</style>

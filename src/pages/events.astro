@@ -1,8 +1,10 @@
 ---
 import "../styles/generel.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import EventCard from "../components/EventCard.astro";
 ---
 
-<div class="event">
+<!-- <div class="event">
   <div class="event_header">
     <p>22/08/2024</p>
     <p>Karrusel Festival</p>
@@ -17,10 +19,88 @@ import "../styles/generel.css";
   <div class="event_link">
     <p>Arrangeret af <a href="https://www.nusnus.dk/">Nus Nus</a></p>
   </div>
-</div>
+</div> -->
+<MainLayout>
+  <h1 class="event_headline">Events</h1>
+  <section class="event_container">
+    <EventCard variant="variant_1" date="22. august" title="Karrusel Festival" headline="Face painting" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." arrange="Arranget af Nus Nus" />
+    <EventCard variant="variant_2" date="22. august" title="Karrusel Festival" headline="Cocktail making" description="lorem ipsum" arrange="Arranget af Nus Nus" />
+    <EventCard variant="variant_3" date="23. august" title="Karrusel Festival" headline="Karrusel" description="lorem ipsum" arrange="Arranget af Nus Nus" />
+    <EventCard variant="variant_4" date="23. august" title="Karrusel Festival" headline="Show" description="lorem ipsum" arrange="Arranget af Nus Nus" />
+    <EventCard variant="variant_5" date="24. august" title="Karrusel Festival" headline="Palm reading" description="lorem ipsum" arrange="Arranget af Nus Nus" />
+    <EventCard variant="variant_6" date="24. august" title="Karrusel Festival" headline="Horseback riding" description="lorem ipsum" arrange="Arranget af Nus Nus" />
+  </section>
+  <section class="food">
+    <h1>Food</h1>
+    <ul>
+      <li>Gasoline Grill</li>
+      <li>Strangas Greek Food</li>
+      <li>Poulette</li>
+      <li>Pasta la Pasta</li>
+    </ul>
+  </section>
+  <hr />
+  <section class="bar">
+    <h1>Bar</h1>
+    <ul>
+      <li>To Øl aps</li>
+      <li>Økovin</li>
+      <li>Juiceorganic aps</li>
+      <li>Postevand</li>
+      <li>Mikkeller</li>
+    </ul>
+  </section>
+</MainLayout>
 
 <style>
-  .event {
+  .event_headline {
+    font-size: 3rem;
+    margin: 20px 0 20px 20px;
+    font-family: rye;
+  }
+  .event_container {
+    display: grid;
+    justify-content: center;
+    margin: auto;
+  }
+
+  hr {
+    border: solid 0.5px var(---text-color);
+  }
+
+  .food h1,
+  .bar h1 {
+    font-family: rye;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 2rem;
+  }
+
+  .food,
+  .bar {
+    margin-bottom: 25px;
+    margin-top: 40px;
+  }
+
+  ul li {
+    color: var(---text-color);
+    margin-left: 20px;
+    margin-bottom: 8px;
+    list-style: none;
+  }
+
+  @media (min-width: 800px) {
+    .event_container {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .food,
+    .bar {
+      max-width: 1350px;
+      margin: 40px auto 25px;
+    }
+  }
+  /* .event {
     background: #ff4e50;
     background: -webkit-linear-gradient(left, #023dff, #ff00a5);
     background: linear-gradient(to right, #023dff, #ff00a5);
@@ -60,16 +140,16 @@ import "../styles/generel.css";
 
   a {
     color: white;
-  }
+  } */
 </style>
 
-<div class="ticketknap">
+<!-- <div class="ticketknap">
   <button>Buy Tickets</button>
-</div>
+</div> -->
 
 <style>
   /*mobil*/
-  button {
+  /* button {
     border: 3px solid #00ff29;
     border-radius: 10px;
     padding-left: 25px;
@@ -79,11 +159,11 @@ import "../styles/generel.css";
     background-color: transparent;
     cursor: pointer;
     color: white;
-  }
+  } */
 
   /*computer*/
 
-  button {
+  /* button {
     width: 150px;
-  }
+  } */
 </style>
