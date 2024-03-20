@@ -24,12 +24,17 @@ const { data } = Astro.props;
 <style>
   article {
     width: 300px;
-    color: white;
-    margin-left: 2rem;
-    animation: move_rtl 6s linear infinite;
-    white-space: nowrap;
+    color: var(---text-color);
+    margin: 0 auto 2rem;
     background-color: var(---blue-60);
     height: 250px;
+    border-radius: 10px;
+  }
+
+  article img {
+    border-radius: 10px 10px 0 0;
+    height: 180px;
+    margin-bottom: 1rem;
   }
 
   h3 {
@@ -39,15 +44,6 @@ const { data } = Astro.props;
   p {
     padding-left: 5px;
     font-size: var(--font-size-p);
-  }
-  @keyframes move_rtl {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
   }
   a {
     text-decoration: none;

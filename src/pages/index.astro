@@ -16,7 +16,10 @@ const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/Kar
 console.log("artist", artist);
 ---
 
-<MainLayout title="Hjem">
+<MainLayout>
+  <section class="hero">
+    <h1>22. - 24. august - Copenhagen - Refshalesøen</h1>
+  </section>
   <section class="artist">
     {
       artist.map((artist) => {
@@ -24,15 +27,55 @@ console.log("artist", artist);
       })
     }
   </section>
-  <Countdown />
-  <iframe controls autoplay width="560" height="315" src="https://www.youtube.com/embed/w5XwDzNwiSk?si=ARVhgd0x5-ZI83Ez" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+  <div class="view_lineup">
+    <a href="/programliste">View full line up</a>
+  </div>
+
+  <section>
+    <iframe src="https://www.youtube.com/embed/w5XwDzNwiSk?si=g7RQT7fF8nlNHMGF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+
+  <section class="countdown">
+    <Countdown />
+  </section>
 </MainLayout>
 
 <style>
-  .artist {
-    display: flex;
-    justify-content: space-between;
-    overflow: hidden;
+  .hero h1 {
+    font-family: rye;
+    color: var(---pink-100);
+    font-size: 2rem;
+    text-align: center;
+    margin: 250px 0 50px;
+  }
+  a {
+    color: var(---text-color);
+  }
+
+  a:hover {
+    color: var(---green-100);
+  }
+
+  iframe {
+    margin: 50px auto;
+    max-width: 550px;
+    height: 315px;
+  }
+
+  .view_lineup {
+    text-align: center;
+  }
+
+  @media (min-width: 800px) {
+    .artist {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+    }
   }
 </style>
 

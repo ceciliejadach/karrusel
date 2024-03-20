@@ -5,7 +5,7 @@
 }
 
 img,
-video {
+iframe {
   width: 100%;
   height: auto;
   display: block;
@@ -56,4 +56,5 @@ p {
 
 p {
   line-height: 1.4rem;
+  --font-size-p: 1rem;
 }
