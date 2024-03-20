@@ -3,7 +3,7 @@ import "../styles/generel.css";
 const { data } = Astro.props;
 ---
 
-<a href=`singleview/${data.id}`>
+<a href=`singleview/${data.slug}`>
   <article>
     <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
     <div>
