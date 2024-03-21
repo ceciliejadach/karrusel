@@ -65,12 +65,18 @@ console.log("artist", artist);
 
   .view_lineup {
     text-align: center;
+    font-size: var(--font-size-h3-mobile);
   }
 
   @media (min-width: 800px) {
     .artist {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .view_lineup {
+      font-size: var(--font-size-h2-desktop);
+      margin: 100px 0;
     }
 
     .hero h1 {
