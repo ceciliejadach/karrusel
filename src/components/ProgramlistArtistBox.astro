@@ -8,18 +8,18 @@ const { data } = Astro.props;
     <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
     <div>
       <h3>{data.name + " " + data.land}</h3>
-      <p>{data.genre}</p>
-    </div>
+      <!-- <p>{data.genre}</p> -->
 
-    {
-      data.artist && (
-        <ul>
-          {data.artist.map((item) => {
-            return <li> {item}</li>;
-          })}
-        </ul>
-      )
-    }
+      {
+        data.genre && (
+          <ul>
+            {data.genre.map((item) => {
+              return <li> {item}</li>;
+            })}
+          </ul>
+        )
+      }
+    </div>
   </article>
 </a>
 
