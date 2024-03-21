@@ -1,7 +1,7 @@
 ---
 import "../styles/generel.css";
 const { variant } = Astro.props;
-const { date, title, headline, description, arrange } = Astro.props;
+const { date, title, headline, description } = Astro.props;
 ---
 
 <div id="event_card" class={variant + " "}>
@@ -11,7 +11,7 @@ const { date, title, headline, description, arrange } = Astro.props;
   </div>
   <h1>{headline}</h1>
   <p>{description}</p>
-  <p>{arrange}</p>
+  <a href="https://www.nusnus.dk/">Arranget af <span>Nus Nus</span></a>
 </div>
 
 <style>
@@ -56,12 +56,22 @@ const { date, title, headline, description, arrange } = Astro.props;
     margin-bottom: auto;
   }
 
+  a {
+    color: var(---text-color);
+    text-decoration: none;
+    font-size: var(--font-size-p-small);
+  }
+
+  span {
+    text-decoration: underline;
+  }
+
   .variant_1 {
     background: linear-gradient(to right, #023dff, #ff00a5);
   }
 
   .variant_2 {
-    background: linear-gradient(to right, #17ff02, #ddff00);
+    background: linear-gradient(to right, #17ff02, #ff9100);
   }
 
   .variant_3 {
