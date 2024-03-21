@@ -4,7 +4,7 @@ const { data } = Astro.props;
 ---
 
 <a href=`singleview/${data.slug}`>
-  <article>
+  <article class="grid">
     <img src={"portraet/" + data.image} alt={"Image of " + data.name} />
     <div>
       <h3>{data.name + " " + data.land}</h3>
@@ -14,7 +14,7 @@ const { data } = Astro.props;
         data.genre && (
           <ul>
             {data.genre.map((item) => {
-              return <li> {item}</li>;
+              return <li class={item}> {item}</li>;
             })}
           </ul>
         )
@@ -33,6 +33,10 @@ const { data } = Astro.props;
     width: 350px;
   }
 
+  article img {
+    height: 70px;
+  }
+
   article h3,
   article p {
     padding-left: 10px;
@@ -40,5 +44,11 @@ const { data } = Astro.props;
 
   a {
     text-decoration: none;
+  }
+
+  ul li {
+    list-style: none;
+    color: var(---text-color);
+    padding-left: 10px;
   }
 </style>

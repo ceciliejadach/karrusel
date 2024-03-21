@@ -13,13 +13,16 @@ const artist = await fetch("https://couztkypuvadixszzvmk.supabase.co/rest/v1/Kar
   return response.json();
 });
 
-console.log("artist", artist.slug);
+// console.log("artist", artist.slug);
 ---
 
 <MainLayout>
-  <h1>Line-up</h1>
-  <FilterBox />
-  <section class="artist">
+  <section class="list_headline">
+    <h1>Line-up</h1>
+    <FilterBox />
+  </section>
+
+  <section class="list">
     {
       artist.map((artist) => {
         return <ProgramlistArtistBox data={artist} />;
@@ -29,11 +32,32 @@ console.log("artist", artist.slug);
 </MainLayout>
 
 <style>
+  .hide {
+    display: none;
+  }
   h1 {
     font-family: rye;
+    font-size: 3rem;
     margin: 20px 0 20px 20px;
   }
 
   @media (min-width: 800px) {
+    .list_headline {
+      max-width: 1350px;
+      margin: auto;
+    }
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
   }
 </style>
+
+<!-- <script>
+  const elements = document.querySelectorAll("article li.House");
+
+  elements.forEach((elm) => {
+    elm.parentElement.parentElement.parentElement.classList.add("hide");
+    console.log(elm.parentElement.parentElement.parentElement);
+  });
+</script> -->

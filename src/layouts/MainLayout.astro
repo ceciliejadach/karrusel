@@ -22,7 +22,7 @@ import Footer from "../components/Footer.astro";
   >
 
   <body>
-    <!-- <div class="background_container"></div> -->
+    <div class="background_container"></div>
     <Navigation />
     <main>
       <h1>{title}</h1>
@@ -32,14 +32,14 @@ import Footer from "../components/Footer.astro";
   </body>
 
   <style>
-    /* .background_container {
+    .background_container {
       position: fixed;
       top: 0;
       left: 0;
       z-index: -1;
       height: 150vh;
       width: 100%;
-      background: linear-gradient(45deg, var(---green-100), var(---pink-100), var(---background-color), var(---blue-60));
+      background: linear-gradient(45deg, var(---green-100), var(---background-color), var(---pink-100));
       background-size: 200% 200%;
       animation: color 12s ease-in-out infinite;
     }
@@ -54,6 +54,6 @@ import Footer from "../components/Footer.astro";
       100% {
         background-position: 0 50%;
       }
-    } */
+    }
   </style>
 </html>

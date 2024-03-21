@@ -1,26 +1,32 @@
-<h3>Filter by genre</h3>
+<div class="filterbox">
+  <h3>Filter by genre</h3>
 
-<form id="filter_form">
-  <div>
-    <input type="radio" id="house" name="genre" value="house" checked />
-    <label for="house"> House </label>
-  </div>
-  <div>
-    <input type="radio" id="techno" name="genre" value="techno" checked />
-    <label for="techno"> Techno </label>
-  </div>
-  <div>
-    <input type="radio" id="disco" name="genre" value="disco" checked />
-    <label for="disco"> Disco </label>
-  </div>
-</form>
+  <form id="filter_form">
+    <div>
+      <input type="radio" id="house" name="genre" value="house" checked />
+      <label for="house"> House </label>
+    </div>
+    <div>
+      <input type="radio" id="techno" name="genre" value="techno" checked />
+      <label for="techno"> Techno </label>
+    </div>
+    <div>
+      <input type="radio" id="disco" name="genre" value="disco" checked />
+      <label for="disco"> Disco </label>
+    </div>
+  </form>
+</div>
 
 <style>
+  .filterbox {
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
   #filter_form {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    border: 1px solid white;
+    border: 1px solid var(---text-color);
     padding: 10px 10px;
     border-radius: 5px;
     max-width: fit-content;

@@ -9,9 +9,11 @@ import "../styles/generel.css";
     <img class="order" src="/public/img/practical_img.webp" alt="pracital information" />
     <div class="text">
       <h2>Practical information</h2>
-      <p>Where: 3 days of house, disco, and techno in the magical forest. Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen. Address: Refshalevej 193, 1432 Copenhagen.</p>
+      <p><strong>Where:</strong> 3 days of house, disco, and techno in the magical forest. Karrusel takes place at a secluded green spot on Refshaleøen in central Copenhagen.</p>
       <br />
-      <p>When: 22–24 August 2024 Early Bird Festival Passes on sale now until 1 April.</p>
+      <p><strong>Address:</strong> Refshalevej 193, 1432 Copenhagen.</p>
+      <br />
+      <p><strong>When:</strong> 22–24 August 2024 Early Bird Festival Passes on sale now until 1 April.</p>
     </div>
   </div>
   <div class="info">
@@ -50,7 +52,12 @@ import "../styles/generel.css";
 
   .info .text {
     background-color: #1e1e1ec1;
-    ba
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .text p {
+    hyphens: auto;
   }
 
   .info {
@@ -80,8 +87,9 @@ import "../styles/generel.css";
       order: 1;
     }
 
-    .info h2, .info p {
-        padding: 10px 0 10px 20px;
+    .info h2,
+    .info p {
+      padding: 10px 0 10px 20px;
     }
   }
 </style>

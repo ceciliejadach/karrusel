@@ -32,7 +32,7 @@ console.log("artist", artist);
     <a href="/programliste">View full line up</a>
   </div>
 
-  <section>
+  <section class="video">
     <iframe src="https://www.youtube.com/embed/w5XwDzNwiSk?si=g7RQT7fF8nlNHMGF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </section>
 
@@ -44,7 +44,7 @@ console.log("artist", artist);
 <style>
   .hero h1 {
     font-family: rye;
-    color: var(---pink-100);
+    color: var(---text-color);
     font-size: 2rem;
     text-align: center;
     margin: 250px 0 50px;
@@ -68,6 +68,16 @@ console.log("artist", artist);
     font-size: var(--font-size-h3-mobile);
   }
 
+  .video {
+    background-color: var(---background-color);
+    margin: 50px 0;
+  }
+
+  @media (min-width: 550px) {
+    .video {
+      padding: 50px 0;
+    }
+  }
   @media (min-width: 800px) {
     .artist {
       display: grid;
