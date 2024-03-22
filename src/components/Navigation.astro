@@ -6,13 +6,11 @@ import Burger from "../components/Burger.astro";
 <div class="nav-container">
   <a href="/"><img src="/public/img/karrosel-logo.png" alt="karrusel logo" /></a>
   <p>22.- 24. august</p>
-  <Burger />
+  <div>
+    <button>Buy Tickets</button>
+    <Burger />
+  </div>
 </div>
-
-<!-- <a href="/programliste">Programliste</a>
-<a href="/singleview">Singleview</a>
-<a href="/events">Events</a>
-<a href="/about">About us</a> -->
 
 <style>
   .nav-container img {
@@ -23,8 +21,33 @@ import Burger from "../components/Burger.astro";
   .nav-container {
     padding: 11px 6px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin: 10px 5px 0 5px;
+  }
+
+  /*mobil*/
+  button {
+    border: 3px solid var(---green-100);
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(---text-color);
+  }
+
+  button:hover {
+    background-color: var(---green-100);
+    color: var(---background-color);
+  }
+
+  @media (min-width: 800px) {
+    .nav-container {
+      justify-content: space-between;
+    }
+
+    button {
+      margin-right: 80px;
+    }
   }
 </style>

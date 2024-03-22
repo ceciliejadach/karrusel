@@ -18,7 +18,9 @@ console.log("artist", artist);
 
 <MainLayout>
   <section class="hero">
-    <h1>22. - 24. august - Copenhagen - Refshalesøen</h1>
+    <h1>Karrusel Festival</h1>
+    <h1>Copenhagen - Refshalesøen</h1>
+    <h1>22. - 24. august</h1>
   </section>
   <section class="artist">
     {
@@ -42,12 +44,22 @@ console.log("artist", artist);
 </MainLayout>
 
 <style>
-  .hero h1 {
+  .hero {
     font-family: rye;
     color: var(---text-color);
     font-size: 2rem;
     text-align: center;
-    margin: 250px 0 50px;
+    margin: 70px 0;
+  }
+
+  .hero :first-child {
+    font-size: 4rem;
+  }
+
+  .hero :nth-child(2),
+  .hero :nth-child(3) {
+    font-size: var(--font-size-h1-mobile);
+    color: rgba(255, 255, 255, 0.735);
   }
   a {
     color: var(---text-color);
@@ -74,6 +86,12 @@ console.log("artist", artist);
   }
 
   @media (min-width: 550px) {
+    .hero {
+      margin: 200px 0;
+    }
+    .hero :first-child {
+      font-size: 5rem;
+    }
     .video {
       padding: 50px 0;
     }
